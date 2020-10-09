@@ -4,7 +4,7 @@
   "description": "A server for the face-recognition app made with node.js, express.js, postgre SQL",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
