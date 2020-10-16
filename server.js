@@ -9,6 +9,7 @@ const { handleRegister } = require('./controllers/register');
 const { handleProfileGet } = require('./controllers/profile');
 const { handleApiCall, handleImage } = require('./controllers/image');
 const db = knex({
+  client: 'pg',
   connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
