@@ -1,11 +1,13 @@
 const handleRegister = (req, res, db, bcrypt) => {
     console.log("new registration");
+    console.log('req.body; :', req.body);
     const { email, name, password } = req.body;
     if (!email || !password) {
         console.log('name or email or password is invalid')
         console.log(email, name, password);
         return res.status(400).json('incorrect form submission');
     }
+    console.log('req.body; :', req.body;);
     const hash = bcrypt.hashSync(password);
     db.transaction(trx => {
         console.log('start trx');
