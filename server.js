@@ -16,7 +16,7 @@ const db = knex({
   }
   });
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT;
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -29,7 +29,7 @@ app.get('/profile/:id', (req, res ) =>  { handleProfileGet(req, res, db) });
 app.put('/image', (req, res) => { handleImage(req, res, db) });
 app.post('/imageurl', (req, res) => { handleApiCall(req, res) });
 
-const port = 3001; 
+
 app.listen(PORT || 3001, () => {
     console.log(`app is running on port ${PORT}`);
 })
