@@ -32,14 +32,14 @@ const handleRegister = (req, res, db, bcrypt) => {
         })
         .then(trx.commit)
         .catch(err => {
-            console.log('err :', err);
+            console.log('err 1 :', err);
             trx.rollback;
         })
         console.log('end trx');
     })
     .catch( err => {
-        console.log('err : ', err)
-        res.status(400).json('unable to register');
+        console.log('err 2: ', err)
+        res.status(400).json(err);
     });
 }
 
