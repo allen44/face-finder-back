@@ -37,7 +37,10 @@ const handleRegister = (req, res, db, bcrypt) => {
         })
         console.log('end trx');
     })
-    .catch( err => res.status(400).json('unable to register'));
+    .catch( err => {
+        console.log('err : ', err)
+        res.status(400).json('unable to register');
+    });
 }
 
 module.exports = {
