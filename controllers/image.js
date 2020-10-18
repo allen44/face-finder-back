@@ -1,7 +1,8 @@
 // const {ClarifaiStub} = require("clarifai-nodejs-grpc");
 // const grpc = require("@grpc/grpc-js");
 const Clarifai = require("clarifai");
-const CLARIFAI_API_KEY = '1ecace96280949d684f58ca7f728fe66' //Move this to .env file later
+const CLARIFAI_API_KEY = process.env.API_CLARIFAI
+console.log('CLARIFAI_API_KEY: ', CLARIFAI_API_KEY)
 
 // Construct one of the stubs you want to use
 // const stub = ClarifaiStub.json();
@@ -73,9 +74,9 @@ const handleApiCallDeprecated = (req, res) => {
 }
 
 const handleImage = (req, res, db) => {
-    console.log('image.handleImage() :')
-    console.log('req : ', req)
-    console.log('req.body : ', req.body)
+    // console.log('image.handleImage() :')
+    // console.log('req : ', req)
+    // console.log('req.body : ', req.body)
     const { id } = req.body;
     db ('users').where('id', '=', id)
     .increment('entries', 1)
@@ -85,7 +86,7 @@ const handleImage = (req, res, db) => {
         res.json(entries[0]);
     })
     .catch(err => {
-        console.log(err);
+        console.log('err :', err);
         res.status(400).json('unable to get entries');
     });
 }
