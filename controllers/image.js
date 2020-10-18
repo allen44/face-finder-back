@@ -58,6 +58,7 @@ const handleApiCall = (req, res ) => {
 }
 
 const handleApiCallDeprecated = (req, res) => {
+    console.log('handleApiCallDeprecated() : ')
     console.log('req.body : ', req.body)
     const app = new Clarifai.App({
         apiKey: process.env.API_CLARIFAI
