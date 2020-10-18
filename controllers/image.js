@@ -70,7 +70,10 @@ const handleApiCallDeprecated = (req, res) => {
         console.log(data);
         res.json(data);
         })
-      .catch(err => res.status(400).json('unable to work with API'))
+      .catch(err => {
+        console.log('err 3: ', err)
+          res.status(400).json(err))
+      }
 }
 
 const handleImage = (req, res, db) => {
