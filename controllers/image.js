@@ -1,11 +1,12 @@
 const Clarifai = require('clarifai');
 
 //You must add your own API key here from Clarifai. 
-const app = new Clarifai.App({
- apiKey: 'YOUR API KEY HERE'
-});
 
-const handleApiCall = (req, res) => {
+
+const handleApiCall = (req, res, apiKey) => {
+  const app = new Clarifai.App({
+    apiKey: apiKey
+   });
   app.models
     // HEADS UP! Sometimes the Clarifai Models can be down or not working as they are constantly getting updated.
     // A good way to check if the model you are using is up, is to check them on the clarifai website. For example,
