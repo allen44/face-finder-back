@@ -1,8 +1,7 @@
 // const {ClarifaiStub} = require("clarifai-nodejs-grpc");
 // const grpc = require("@grpc/grpc-js");
 const Clarifai = require("clarifai");
-const CLARIFAI_API_KEY = process.env.API_CLARIFAI
-console.log('CLARIFAI_API_KEY: ', CLARIFAI_API_KEY)
+
 
 // Construct one of the stubs you want to use
 // const stub = ClarifaiStub.json();
@@ -61,7 +60,7 @@ const handleApiCall = (req, res ) => {
 const handleApiCallDeprecated = (req, res) => {
     console.log('req.body : ', req.body)
     const app = new Clarifai.App({
-        apiKey: CLARIFAI_API_KEY
+        apiKey: process.env.API_CLARIFAI
        });
     const imageUrl = req.body.input;
     app.models
