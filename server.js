@@ -10,8 +10,8 @@ const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
 const PORT = process.env.PORT ? process.env.PORT : 3000;
-const DATABASE_URL = process.env.DATABASE_URL ? process.env.DATABASE_URL : "postgres://trpcpyvswpkalt:f83866c680643ad157279f152a4d3e5eedf085ace990ced0a43f15602b3e6402@ec2-52-2-82-109.compute-1.amazonaws.com:5432/dhae89btn2sek";
-const API_CLARIFAI = process.env.API_CLARIFAI ? process.env.API_CLARIFAI : '1ecace96280949d684f58ca7f728fe66';
+const DATABASE_URL = process.env.DATABASE_URL
+const API_CLARIFAI = process.env.API_CLARIFAI
 const db = knex({
   // connect to your own database here
   client: 'pg',
