@@ -16,7 +16,8 @@
     "express": "^4.17.1",
     "knex": "^0.21.8",
     "morgan": "^1.10.0",
-    "pg": "^8.4.2"
+    "pg": "^8.4.2",
+    "set-value": ">=4.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
